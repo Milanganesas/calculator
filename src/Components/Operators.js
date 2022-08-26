@@ -1,9 +1,11 @@
 import { useCalculate, useResult } from "../Context/Operations";
+import { useColor } from "../Context/Styles";
 
 const Operators = () => {
 
     const {calculate, setCalculate} = useCalculate();
     const {setResult} = useResult();
+    const {color} = useColor();
 
     const operators = ["+", "-", "*", "/", "."];
 
@@ -40,12 +42,12 @@ const Operators = () => {
     return (
         <div className="grid">
             <div className="flex justify-center">
-                <button onClick={addParentheses}>(</button>
-                <button onClick={addParentheses}>)</button>
+                <button style={{color: color.operators}} onClick={addParentheses}>(</button>
+                <button style={{color: color.operators}} onClick={addParentheses}>)</button>
             </div>
             {operators.map ( (op, idx) => {
                 if(op !== ".") {
-                    return (<button key={idx} onClick={addOperators}>{op}</button>)
+                    return (<button key={idx} style={{color: color.operators}} onClick={addOperators}>{op}</button>)
                 };
             }
             )}
