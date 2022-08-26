@@ -5,7 +5,7 @@ const Operators = () => {
 
     const {calculate, setCalculate} = useCalculate();
     const {setResult} = useResult();
-    const {color} = useColor();
+    const {color, operatorsCSS} = useColor();
 
     const operators = ["+", "-", "*", "/", "."];
 
@@ -40,18 +40,18 @@ const Operators = () => {
     };
 
     return (
-        <div className="grid">
-            <div className="flex justify-center">
-                <button style={{color: color.operators}} onClick={addParentheses}>(</button>
-                <button style={{color: color.operators}} onClick={addParentheses}>)</button>
+        <>
+            <div className="flex justify-center justify-between content-center gap-5">
+                <button style={{color: color.operators}} className={operatorsCSS} onClick={addParentheses}>(</button>
+                <button style={{color: color.operators}} className={operatorsCSS} onClick={addParentheses}>)</button>
             </div>
             {operators.map ( (op, idx) => {
                 if(op !== ".") {
-                    return (<button key={idx} style={{color: color.operators}} onClick={addOperators}>{op}</button>)
+                    return (<button key={idx} style={{color: color.operators}} className={operatorsCSS} onClick={addOperators}>{op}</button>)
                 };
             }
             )}
-        </div>
+        </>
     )
 };
 

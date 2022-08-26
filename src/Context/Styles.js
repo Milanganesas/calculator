@@ -30,10 +30,10 @@ export function StylesProvider ({children}) {
 
     const [color, setColor] = useState(lightTheme);
 
-    const numberCSS = "";
-    const operatorsCSS = "";
-    const opClearCSS = "";
-    const resultCSS = "mr-2 sm:text-2xl text-1xl text-center overflow-clip";
+    const numberCSS = "m-5 text-2xl text-center";
+    const operatorsCSS = "mx-5 mb-5 text-2xl text-center";
+    const opClearCSS = "mx-5 text-2xl text-center";
+    const resultCSS = "mr-2 text-2xl text-center";
 
     const changeColor = () => {
         color.main === lightTheme.main ? setColor(darkTheme) : setColor(lightTheme);

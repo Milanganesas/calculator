@@ -6,7 +6,7 @@ const OpClear = () => {
 
     const {calculate, setCalculate} = useCalculate();
     const {setResult} = useResult();
-    const {color} = useColor();
+    const {color, opClearCSS} = useColor();
 
     const clear = () => {
         setCalculate("");
@@ -19,10 +19,10 @@ const OpClear = () => {
     };
 
     return (
-        <div className="flex">
-            <button style={{color: color.clear}} onClick={clear}>C</button>
-            <button style={{color: color.clear}} onClick={caracterDelete}><FiDelete /></button>
-        </div>
+        <>
+            <button style={{color: color.clear}} className={opClearCSS} onClick={clear}>C</button>
+            <button style={{color: color.clear}} className={opClearCSS} onClick={caracterDelete}><FiDelete /></button>
+        </>
     )
 
 };

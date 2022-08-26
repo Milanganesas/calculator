@@ -5,7 +5,7 @@ const Numbers = () => {
 
     const {calculate, setCalculate} = useCalculate();
     const {setResult} = useResult();
-    const {color} = useColor();
+    const {color, numberCSS} = useColor();
 
     const addCaracter = (e) => {
         const value = e.target.innerText;
@@ -32,7 +32,7 @@ const Numbers = () => {
 
         for (let i = 0; i < 10; i++) {
            numbers.unshift(
-            <button key={i} onClick={addCaracter} style={{color: color.number}}>{i}</button>
+            <button key={i} onClick={addCaracter} style={{color: color.number}} className={numberCSS}>{i}</button>
            );
         };
 
@@ -40,11 +40,11 @@ const Numbers = () => {
     };
 
     return (
-        <div className="grid grid-cols-3">
+        <>
             { createNumbers() }
-            <button style={{color: color.number}} onClick={addCaracter}>.</button>
-            <button style={{color: color.number}} onClick={equal}>=</button>
-        </div>
+            <button style={{color: color.number}} className={numberCSS} onClick={addCaracter}>.</button>
+            <button style={{color: color.number}} className={numberCSS} onClick={equal}>=</button>
+        </>
     )
 };
 
