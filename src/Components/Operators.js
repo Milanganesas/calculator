@@ -31,6 +31,7 @@ const Operators = () => {
         if (
             value === ")" && calculate === "" ||
             value === ")" && calculate.slice(-1) === "(" ||
+            value === ")" && calculate.slice(-1) === ")" ||
             value === ")" && operators.includes(calculate.slice(-1))
         ) {
             return;
