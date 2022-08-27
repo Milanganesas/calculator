@@ -27,21 +27,18 @@ const Numbers = () => {
         setResult(eval(calculate));
     }
 
-    const createNumbers = () => {
-        const numbers = [];
-
-        for (let i = 0; i < 10; i++) {
-           numbers.unshift(
-            <button key={i} onClick={addCaracter} style={{color: color.number}} className={numberCSS}>{i}</button>
-           );
-        };
-
-        return numbers;
-    };
-
     return (
         <>
-            { createNumbers() }
+            <button onClick={addCaracter} style={{color: color.number}} className={numberCSS}>7</button>
+            <button onClick={addCaracter} style={{color: color.number}} className={numberCSS}>8</button>
+            <button onClick={addCaracter} style={{color: color.number}} className={numberCSS}>9</button>
+            <button onClick={addCaracter} style={{color: color.number}} className={numberCSS}>4</button>
+            <button onClick={addCaracter} style={{color: color.number}} className={numberCSS}>5</button>
+            <button onClick={addCaracter} style={{color: color.number}} className={numberCSS}>6</button>
+            <button onClick={addCaracter} style={{color: color.number}} className={numberCSS}>1</button>
+            <button onClick={addCaracter} style={{color: color.number}} className={numberCSS}>2</button>
+            <button onClick={addCaracter} style={{color: color.number}} className={numberCSS}>3</button>
+            <button onClick={addCaracter} style={{color: color.number}} className={numberCSS}>0</button>
             <button style={{color: color.number}} className={numberCSS} onClick={addCaracter}>.</button>
             <button style={{color: color.number}} className={numberCSS} onClick={equal}>=</button>
         </>

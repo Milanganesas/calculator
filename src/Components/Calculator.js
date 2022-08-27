@@ -9,24 +9,24 @@ const Calculator = () => {
 
     const {calculate} = useCalculate();
     const {result} = useResult();
-    const {color, resultCSS} = useColor();
+    const {color, resultCSS, calculateCSS} = useColor();
 
     return (
-        <div className="h-96 w-52 rounded-2xl grid" style={{background: color.main, height: "70vh", width: "37vh"}}>  
-            <div style={{background: color.secondary, height: "20vh"}} className="grid justify-end border-b border-b-sky-500 rounded-t-2xl content-center overflow-clip">
+        <div className="rounded-2xl grid border border-sky-400" style={{background: color.main, height: "70vh", width: "37vh"}}>  
+            <div style={{background: color.secondary, height: "20vh"}} className="grid border-b border-b-sky-400 rounded-t-2xl content-center text-right overflow-hidden">
                 {calculate ? 
-                    <div style={{color: color.calculate}} className={resultCSS}>{calculate}</div> : 
-                    <div style={{color: color.calculate}} className={resultCSS}>0</div>}
+                    <p style={{color: color.calculate}} className={calculateCSS}>{calculate}</p> : 
+                    <p style={{color: color.calculate}} className={calculateCSS}>0</p>}
                 {result ? 
-                    <div style={{color: color.result}} className={resultCSS}>{result}</div> : 
-                    <div style={{color: color.result}} className={resultCSS}>({calculate || 0})</div>}
+                    <p style={{color: color.result}} className={resultCSS}>{result}</p> : 
+                    <p style={{color: color.result}} className={resultCSS}>({calculate || 0})</p>}
             </div>
             <div className="grid grid-cols-2">
                 <div className="grid justify-center">
-                    <div className="flex text-xl justify-around content-center">
+                    <div className="flex text-2xl justify-around content-center">
                         <OpClear />
                     </div>
-                    <div className="grid grid-cols-3 text-xl">
+                    <div className="grid grid-cols-3 text-2xl">
                         <Numbers />
                     </div>
                 </div>

@@ -6,15 +6,11 @@ const Home = () => {
 
     return (
         <div className="grid justify-center content-center min-h-screen bg-slate-200 relative">
-            <div>
                 <Nav />
-            </div>
-            <div>
+            <div className="shadow-xl shadow-gray-400 rounded-2xl">
                 <Calculator />
             </div>
-            <div>
                 <Footer />
-            </div>
         </div>
     )
 };

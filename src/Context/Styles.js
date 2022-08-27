@@ -13,7 +13,8 @@ const lightTheme = {
     clear: "#F26430",
     number: "#000000",
     calculate: "#3D3D3D",
-    result: "#ffffff"
+    result: "#ffffff",
+    link: "#0b2742",
 };
 
 const darkTheme = {
@@ -23,7 +24,8 @@ const darkTheme = {
     clear: "#F26430",
     number: "#ffffff",
     calculate: "#C6C6C6",
-    result: "#ffffff"
+    result: "#ffffff",
+    link: "#25b4fe",
 };
 
 export function StylesProvider ({children}) {
@@ -33,14 +35,15 @@ export function StylesProvider ({children}) {
     const numberCSS = "m-5 text-2xl text-center";
     const operatorsCSS = "mx-5 mb-5 text-2xl text-center";
     const opClearCSS = "mx-5 text-2xl text-center";
-    const resultCSS = "mr-2 text-2xl text-center";
+    const resultCSS = "mr-2 text-2xl";
+    const calculateCSS = "mr-4 text-xl";
 
     const changeColor = () => {
         color.main === lightTheme.main ? setColor(darkTheme) : setColor(lightTheme);
     }
 
     return (
-        <styleContext.Provider value={{color, changeColor, numberCSS, operatorsCSS, opClearCSS, resultCSS}}>
+        <styleContext.Provider value={{color, changeColor, numberCSS, operatorsCSS, opClearCSS, resultCSS, calculateCSS}}>
             {children}
         </styleContext.Provider>
     )
