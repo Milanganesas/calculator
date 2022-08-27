@@ -13,7 +13,8 @@ const Numbers = () => {
         const operators = ["+", "-", "*", "/"];
         if (
             value === "." && calculate === "" || 
-            value === "." && operators.includes(calculate.slice(-1))
+            value === "." && operators.includes(calculate.slice(-1)) ||
+            calculate.length === 40
         ) {
             return;
         };

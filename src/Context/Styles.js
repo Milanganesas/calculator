@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { useCalculate } from "./Operations";
 
 const styleContext = createContext();
 
@@ -32,11 +33,20 @@ export function StylesProvider ({children}) {
 
     const [color, setColor] = useState(lightTheme);
 
+    const {calculate} = useCalculate();
+
+    const textSize = () => {
+       return   calculate.length > 25 ? "text-sm" :
+                calculate.length > 20 ? "text-base" :
+                calculate.length > 15 ? "text-lg" :
+                calculate.length > 10 ? "text-xl" : "text-2xl"
+    }
+
     const numberCSS = "m-5 text-2xl text-center";
     const operatorsCSS = "mx-5 mb-5 text-2xl text-center";
     const opClearCSS = "mx-5 text-2xl text-center";
     const resultCSS = "mr-2 text-2xl";
-    const calculateCSS = "mr-4 text-xl";
+    const calculateCSS = `mr-4 ${textSize()}`;
 
     const changeColor = () => {
         color.main === lightTheme.main ? setColor(darkTheme) : setColor(lightTheme);
