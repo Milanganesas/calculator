@@ -14,7 +14,8 @@ const Numbers = () => {
         if (
             value === "." && calculate === "" || 
             value === "." && operators.includes(calculate.slice(-1)) ||
-            calculate.length === 40
+            calculate.length === 10 || calculate.length === 20 || calculate.length === 30 || 
+            calculate.length >= 40 
         ) {
             return;
         };

@@ -15,7 +15,8 @@ const Operators = () => {
         if (
             operators.includes(value) && calculate === "" || 
             operators.includes(value) && operators.includes(calculate.slice(-1)) ||
-            calculate.slice(-1) === "("
+            calculate.slice(-1) === "(" ||
+            calculate.length >= 40 
         ) {
             return;
         };
