@@ -24,7 +24,7 @@ const Operators = () => {
         const addResult = result !== 0 ? result : 0
 
         addResult > 0 ? 
-        setCalculate(addResult + calculate + e.target.innerText) :
+        setCalculate(addResult + e.target.innerText + calculate) :
         setCalculate(calculate + value);
     };
 
