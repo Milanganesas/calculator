@@ -16,6 +16,8 @@ const lightTheme = {
     calculate: "#3D3D3D",
     result: "#ffffff",
     link: "#0b2742",
+    background: "#FDFFFC",
+    shadow: "shadow-gray-400"
 };
 
 const darkTheme = {
@@ -27,6 +29,8 @@ const darkTheme = {
     calculate: "#C6C6C6",
     result: "#ffffff",
     link: "#25b4fe",
+    background: "#011627",
+    shadow: "shadow-current"
 };
 
 export function StylesProvider ({children}) {
@@ -40,7 +44,7 @@ export function StylesProvider ({children}) {
                 calculate.length > 20 ? "text-base" :
                 calculate.length > 15 ? "text-lg" :
                 calculate.length > 10 ? "text-xl" : "text-2xl"
-    }
+    };
 
     const numberCSS = "m-5 text-2xl text-center";
     const operatorsCSS = "mx-5 mb-5 text-2xl text-center";
@@ -50,7 +54,7 @@ export function StylesProvider ({children}) {
 
     const changeColor = () => {
         color.main === lightTheme.main ? setColor(darkTheme) : setColor(lightTheme);
-    }
+    };
 
     return (
         <styleContext.Provider value={{color, changeColor, numberCSS, operatorsCSS, opClearCSS, resultCSS, calculateCSS}}>

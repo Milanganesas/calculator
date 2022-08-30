@@ -14,20 +14,19 @@ const Numbers = () => {
         if (
             value === "." && calculate === "" || 
             value === "." && operators.includes(calculate.slice(-1)) ||
-            calculate.length === 10 || calculate.length === 20 || calculate.length === 30 || 
+            value === "0" && operators.includes(calculate.slice(-1)) ||
             calculate.length >= 40 
         ) {
             return;
         };
         
-        setCalculate(calculate + e.target.innerText);
-        setResult(eval(calculate + value));
+        setCalculate(calculate + e.target.innerText)
     };
 
     const equal = () => {
         setCalculate("");
         setResult(eval(calculate));
-    }
+    };
 
     return (
         <>

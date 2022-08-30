@@ -4,7 +4,7 @@ import { useColor } from "../Context/Styles";
 const Operators = () => {
 
     const {calculate, setCalculate} = useCalculate();
-    const {setResult} = useResult();
+    const {result} = useResult();
     const {color, operatorsCSS} = useColor();
 
     const operators = ["+", "-", "*", "/", "."];
@@ -13,16 +13,19 @@ const Operators = () => {
         const value = e.target.innerText;
 
         if (
-            operators.includes(value) && calculate === "" || 
+            operators.includes(value) && calculate === "" && result < 1|| 
             operators.includes(value) && operators.includes(calculate.slice(-1)) ||
             calculate.slice(-1) === "(" ||
             calculate.length >= 40 
         ) {
             return;
         };
-        
+
+        const addResult = result !== 0 ? result : 0
+
+        addResult > 0 ? 
+        setCalculate(addResult + calculate + e.target.innerText) :
         setCalculate(calculate + value);
-        setResult(eval(calculate));
     };
 
     const addParentheses = (e) => {
@@ -38,7 +41,6 @@ const Operators = () => {
         };
         
         setCalculate(calculate + value);
-        setResult(eval(calculate));
     };
 
     return (

@@ -18,8 +18,8 @@ const Calculator = () => {
                     <p style={{color: color.calculate}} className={calculateCSS}>{calculate}</p> : 
                     <p style={{color: color.calculate}} className={calculateCSS}>0</p>}
                 {result ? 
-                    <p style={{color: color.result}} className={resultCSS}>{result}</p> : 
-                    <p style={{color: color.result}} className={resultCSS}>({calculate || 0})</p>}
+                    <p style={{color: color.result}} className={resultCSS}>({result})</p> : 
+                    <p style={{color: color.result}} className={resultCSS}>(0)</p>}
             </div>
             <div className="grid grid-cols-2">
                 <div className="grid justify-center">

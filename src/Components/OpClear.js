@@ -15,7 +15,6 @@ const OpClear = () => {
 
     const caracterDelete = () => {
         setCalculate(calculate.slice(0, -1));
-        setResult(eval(calculate.slice(0, -1)));
     };
 
     return (
